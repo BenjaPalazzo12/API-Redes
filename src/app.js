@@ -10,7 +10,7 @@ app.use(express.json());
 const registerUser = require("./Routes/UserRoutes/Register.routes");
 const getUser = require("./Routes/UserRoutes/getUser.routes");
 
-//Post Routers
+//Post Routers .)
 const getPost = require("./Routes/PostRoutes/getPost.routes");
 const getPosts = require("./Routes/PostRoutes/getPosts.routes");
 const deletePost = require("./Routes/PostRoutes/deletePost.routes");
