@@ -1,8 +1,20 @@
 const { Post } = require("../../DataBase");
 
-const getPost = async (req, res) => {
+const getPostByUser = async (req, res) => {
   try {
-    const post = await Post.findAll();
+    const postId = req.params.postId;
+    const userId = req.params.userId;
+
+    const post = await Post.findOne({
+      where: {
+        id: postId,
+        UserId: userId,
+      },
+    });
+
+    if (!post) {
+      return res.status(404).json({ error: "Post no encontrado" });
+    }
 
     return res.status(200).json(post);
   } catch (error) {
@@ -10,4 +22,4 @@ const getPost = async (req, res) => {
   }
 };
 
-module.exports = getPost;
+module.exports = getPostByUser;

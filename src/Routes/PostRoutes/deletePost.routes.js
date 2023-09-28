@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const deletepost = require("");
+const deletepost = require("../../Controllers/Post/deletePost");
 
-router.get("/post/:postId", deletepost);
+router.delete("/post/:userId/:postId", deletepost);
 
 module.exports = router;

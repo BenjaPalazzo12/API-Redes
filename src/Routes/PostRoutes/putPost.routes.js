@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const putpost = require("../../Controllers/Post/putPost");
+const putPostByUser = require("../../Controllers/Post/putPost");
 
-router.get("/post/:userId/:postId", putpost);
+router.put("/post", putPostByUser);
 
 module.exports = router;

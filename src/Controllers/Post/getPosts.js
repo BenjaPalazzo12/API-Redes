@@ -1,13 +1,19 @@
 const { Post } = require("../../DataBase");
 
-const getPosts = async (req, res) => {
+const getPostsByUser = async (req, res) => {
   try {
-    const post = await Post.findAll();
+    const userId = req.params.userId;
 
-    return res.status(200).json(post);
+    const posts = await Post.findAll({
+      where: {
+        UserId: userId,
+      },
+    });
+
+    return res.status(200).json(posts);
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
 };
 
-module.exports = getPosts;
+module.exports = getPostsByUser;

@@ -16,6 +16,7 @@ const getPosts = require("./Routes/PostRoutes/getPosts.routes");
 const deletePost = require("./Routes/PostRoutes/deletePost.routes");
 const deletePosts = require("./Routes/PostRoutes/deletePosts.routes");
 const putPosts = require("./Routes/PostRoutes/putPost.routes");
+const postPost = require("./Routes/PostRoutes/postPost.routes");
 
 app.use("/", registerUser);
 app.use("/", getUser);
@@ -25,5 +26,6 @@ app.use("/", getPost);
 app.use("/", getPosts);
 app.use("/", deletePost);
 app.use("/", deletePosts);
+app.use("/", postPost);
 app.use("/", putPosts);
 module.exports = app;
