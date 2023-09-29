@@ -2,7 +2,11 @@ const { User } = require("../../DataBase");
 
 const getUser = async (req, res) => {
   try {
-    const users = await User.findAll();
+    const users = await User.findAll({
+      where: {
+        deleted: false,
+      },
+    });
 
     if (!users || users.length === 0) {
       return res
