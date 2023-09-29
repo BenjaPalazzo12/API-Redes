@@ -27,7 +27,7 @@ User.belongsToMany(Like, { through: "user_like" });
 User.belongsToMany(Comment, { through: "user_comments" });
 User.belongsToMany(Share, { through: "user_share" });
 Post.belongsTo(User);
-
+User.hasMany(Post);
 module.exports = {
   ...sequelize.models,
   connect: sequelize,

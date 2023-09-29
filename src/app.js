@@ -23,6 +23,7 @@ const deletePost = require("./Routes/PostRoutes/deletePost.routes");
 const deletePosts = require("./Routes/PostRoutes/deletePosts.routes");
 const putPosts = require("./Routes/PostRoutes/putPost.routes");
 const postPost = require("./Routes/PostRoutes/postPost.routes");
+const getAllPost = require("./Routes/PostRoutes/getAllPost.routes");
 
 app.use("/", registerUser);
 app.use("/", getUser);
@@ -40,4 +41,6 @@ app.use("/", deletePost);
 app.use("/", deletePosts);
 app.use("/", postPost);
 app.use("/", putPosts);
+app.use("/", getAllPost);
+
 module.exports = app;
