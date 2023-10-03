@@ -1,4 +1,4 @@
-const { Post } = require("../../DataBase");
+const { Post, User } = require("../../DataBase");
 
 const getPostByUser = async (req, res) => {
   try {
@@ -10,6 +10,7 @@ const getPostByUser = async (req, res) => {
         id: postId,
         UserId: userId,
       },
+      include: User, // Incluye el modelo User en la consulta
     });
 
     if (!post) {

@@ -25,6 +25,15 @@ const putPosts = require("./Routes/PostRoutes/putPost.routes");
 const postPost = require("./Routes/PostRoutes/postPost.routes");
 const getAllPost = require("./Routes/PostRoutes/getAllPost.routes");
 
+const PostLike = require("./Routes/PostLikeRoutes/PostLike.routes");
+const getPostLike = require("./Routes/PostLikeRoutes/getPostLike.routes");
+
+const postComment = require("./Routes/CommentsRoutes/PostComment.routes");
+const getComments = require("./Routes/CommentsRoutes/getComment.routes");
+
+const postFollow = require("./Routes/FollowRoutes/postFollow.routes");
+const getFollow = require("./Routes/FollowRoutes/getFollow.routes");
+
 app.use("/", registerUser);
 app.use("/", getUser);
 app.use("/", loginUser);
@@ -42,5 +51,14 @@ app.use("/", deletePosts);
 app.use("/", postPost);
 app.use("/", putPosts);
 app.use("/", getAllPost);
+
+app.use("/", PostLike);
+app.use("/", getPostLike);
+
+app.use("/", postComment);
+app.use("/", getComments);
+
+app.use("/", postFollow);
+app.use("/", getFollow);
 
 module.exports = app;
