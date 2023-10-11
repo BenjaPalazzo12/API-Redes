@@ -42,12 +42,16 @@ Esta API de redes sociales es una aplicación web que permite a los usuarios reg
     ```bash
     npm install
 
-3. Configura las variables de entorno en un archivo .env:
-- PORT= 3001
-- DB_HOST= localhost:5432
-- DB_NAME= NombreDeLaBaseDeDatos
-- DB_PASSWORD= TusPassword
-- DB_USER= TuUsuario
+## Configuración
+
+3. Configura las variables de entorno en un archivo `.env`:
+
+   ```env
+   PORT=3001
+   DB_HOST=localhost:5432
+   DB_NAME=NombreDeLaBaseDeDatos
+   DB_PASSWORD=TusPassword
+   DB_USER=TuUsuario
 
 4. Ejecuta la aplicación:
     npm start
