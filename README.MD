@@ -48,3 +48,16 @@ Esta API de redes sociales es una aplicación web que permite a los usuarios reg
 
 4. Ejecuta la aplicación:
     npm start
+
+## Uso
+La API se ejecuta en http://localhost:3000 de forma predeterminada, pero puedes cambiar el puerto en el archivo de configuración si es necesario. Consulta la documentación de la API para obtener detalles sobre cómo usar cada endpoint.
+
+## Ejemplos de Endpoints
+- /users: Obtener la lista de usuarios.
+- /posts: Obtener la lista de publicaciones.
+- /comments: Obtener la lista de comentarios.
+- /likes: Obtener la lista de likes.
+- /shares: Obtener la lista de publicaciones compartidas.
+- /register: Registrarse como nuevo usuario.
+- /login: Iniciar sesión como usuario.
+- Y más endpoints específicos para cada característica
