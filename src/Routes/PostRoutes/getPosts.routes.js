@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const getPostsByUser = require("../../Controllers/Post/getPosts");
+const getPostsByUser = require("../../Controllers/Post/getPostsByUser");
 
 router.get("/posts/:userId", getPostsByUser);
 
