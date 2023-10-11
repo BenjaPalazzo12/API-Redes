@@ -34,6 +34,9 @@ const getComments = require("./Routes/CommentsRoutes/getComment.routes");
 const postFollow = require("./Routes/FollowRoutes/postFollow.routes");
 const getFollow = require("./Routes/FollowRoutes/getFollow.routes");
 
+const postShare = require("./Routes/ShareRoutes/postShare.routes");
+const getShare = require("./Routes/ShareRoutes/getShare.routes");
+
 app.use("/", registerUser);
 app.use("/", getUser);
 app.use("/", loginUser);
@@ -60,5 +63,8 @@ app.use("/", getComments);
 
 app.use("/", postFollow);
 app.use("/", getFollow);
+
+app.use("/", postShare);
+app.use("/", getShare);
 
 module.exports = app;

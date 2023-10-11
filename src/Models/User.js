@@ -28,6 +28,11 @@ module.exports = (sequelize) => {
         allowNull: true,
         defaultValue: false,
       },
+      image : {
+        type: DataTypes.STRING,
+        allowNull: true,
+        
+      }
     },
     {
       timestamps: false,

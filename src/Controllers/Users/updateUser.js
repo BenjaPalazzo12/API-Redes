@@ -1,9 +1,14 @@
 const { User } = require("../../DataBase");
 
+const isValidURL = (url) => {
+  const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+  return urlPattern.test(url);
+};
+
 const updateUser = async (req, res) => {
   try {
     const { id } = req.params;
-    const { userName, deleted } = req.body;
+    const { userName, deleted, image } = req.body;
 
     const updateUser = await User.findByPk(id);
 
@@ -19,7 +24,14 @@ const updateUser = async (req, res) => {
     if (deleted !== undefined && deleted !== "") {
       updateUser.deleted = deleted;
     }
-
+    if (!isValidURL(image)) {
+      return res
+        .status(400)
+        .json({ message: "La imagen proporcionada no es una URL válida" });
+    }
+    if (image !== undefined && image !== "") {
+      updateUser.image = image;
+    }
     if (updateUser.changed()) {
       await updateUser.save();
       return res

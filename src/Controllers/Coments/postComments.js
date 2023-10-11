@@ -16,12 +16,10 @@ const postComment = async (req, res) => {
       body,
       UserId: parseInt(UserId), // Convierte a número si es necesario
       PostId: parseInt(PostId), // Convierte a número si es necesario
-      like: like || null, // Si se pasa un valor like, asigna ese valor, de lo contrario, asigna null
+      like: like || false, // Si se pasa un valor like, asigna ese valor, de lo contrario, asigna null
     });
 
-    return res
-      .status(201)
-      .json({ message: "Comentario creado con éxito"});
+    return res.status(201).json({ message: "Comentario creado con éxito" });
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }

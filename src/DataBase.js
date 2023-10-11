@@ -6,7 +6,6 @@ const ShareModel = require("./Models/Share");
 const PostModel = require("./Models/Post");
 const CommentModel = require("./Models/Comment");
 const PostLikeModel = require("./Models/PostLike");
-const UserCommentsModel = require("./Models/UserComment");
 const FollowModel = require("./Models/Follow");
 
 const sequelize = new Sequelize(
@@ -19,13 +18,12 @@ const sequelize = new Sequelize(
 
 UserModel(sequelize);
 ShareModel(sequelize);
-UserCommentsModel(sequelize);
 PostModel(sequelize);
 CommentModel(sequelize);
 PostLikeModel(sequelize);
 FollowModel(sequelize);
 
-const { User, Comment, Share, Post, PostLike, UserComment, Follow } =
+const { User, Comment, Share, Post, PostLike, Follow } =
   sequelize.models;
 
 User.hasMany(Comment);
@@ -33,7 +31,7 @@ Comment.belongsTo(User);
 Post.hasMany(Comment);
 Comment.belongsTo(Post);
 
-User.belongsToMany(Share, { through: "user_share" });
+User.belongsToMany(Post, { through: Share });
 Post.belongsTo(User);
 User.belongsToMany(Post, { through: PostLike, as: "LikedPosts" });
 
@@ -42,9 +40,6 @@ PostLike.belongsTo(User);
 
 Post.hasMany(PostLike);
 PostLike.belongsTo(Post);
-
-User.hasMany(UserComment);
-UserComment.belongsTo(User);
 
 User.belongsToMany(User, {
   through: Follow,
@@ -71,6 +66,12 @@ Follow.belongsTo(User, {
   as: "following",
 });
 User.hasMany(Post);
+
+User.hasMany(Share);
+Post.hasMany(Share);
+Share.belongsTo(Post);
+Share.belongsTo(User);
+
 module.exports = {
   ...sequelize.models,
   connect: sequelize,
