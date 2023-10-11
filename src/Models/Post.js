@@ -20,5 +20,9 @@ module.exports = (sequelize) => {
       dafaultValue: false,
       allowNull: true,
     },
+    likeCount: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0, // Puedes establecer un valor predeterminado si es necesario
+    },
   });
 };
