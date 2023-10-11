@@ -43,8 +43,11 @@ Esta API de redes sociales es una aplicación web que permite a los usuarios reg
     npm install
 
 3. Configura las variables de entorno en un archivo .env:
-    DATABASE_URL=postgres://tuusuario:tucontraseña@localhost:5432/tubasededatos
-    SECRET_KEY=tusecretkey  
+    PORT= 3001
+    DB_HOST= localhost:5432
+    DB_NAME= NombreDeLaBaseDeDatos
+    DB_PASSWORD= TusPassword
+    DB_USER= TuUsuario
 
 4. Ejecuta la aplicación:
     npm start
