@@ -54,6 +54,7 @@ Esta API de redes sociales es una aplicación web que permite a los usuarios reg
    DB_USER=TuUsuario
 
 4. Ejecuta la aplicación:
+   ```bash
     npm start
 
 ## Uso
