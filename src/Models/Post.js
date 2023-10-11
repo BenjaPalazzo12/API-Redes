@@ -24,5 +24,15 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       defaultValue: 0, // Puedes establecer un valor predeterminado si es necesario
     },
+    image: {
+      type: DataTypes.STRING,
+      defaultValue: null,
+      allowNull: true,
+    },
+    video: {
+      type: DataTypes.STRING,
+      defaultValue: null,
+      allowNull: true,
+    },
   });
 };
