@@ -61,3 +61,16 @@ La API se ejecuta en http://localhost:3000 de forma predeterminada, pero puedes 
 - /register: Registrarse como nuevo usuario.
 - /login: Iniciar sesión como usuario.
 - Y más endpoints específicos para cada característica
+
+## Contribución
+Si deseas contribuir al desarrollo de esta API, sigue estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una rama para tu contribución: git checkout -b feature/nueva-funcionalidad.
+3. Realiza tus cambios y haz commit: git commit -m 'Añadir nueva funcionalidad'.
+4. Sube tus cambios: git push origin feature/nueva-funcionalidad.
+5. Abre una solicitud de extracción en GitHub.
+
+
+## Licencia
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más detalles.
