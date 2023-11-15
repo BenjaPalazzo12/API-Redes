@@ -1,8 +1,6 @@
 require("dotenv").config();
 const app = require("./src/app");
-const { connect } = require(process.env.NODE_ENV === "test"
-  ? "./src/DataBaseTest"
-  : "./src/DataBase");
+const { connect } = require('./src/DataBase');
 const { PORT } = process.env;
 
 connect
