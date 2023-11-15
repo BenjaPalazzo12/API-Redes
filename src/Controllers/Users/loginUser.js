@@ -18,7 +18,9 @@ const loginUser = async (req, res) => {
     const checkPassword = await compare(password, user.password);
 
     if (checkPassword) {
-      return res.status(200).json(user);
+      return res
+        .status(200)
+        .json({ message: "Sesion iniciada correctamente" , user});
     } else {
       return res.status(401).json({ error: "Contraseña incorrecta" });
     }
