@@ -2,8 +2,8 @@ const { Post, User } = require("../../DataBase");
 const AWS = require("aws-sdk");
 const axios = require("axios"); // Agregamos el módulo axios
 const s3 = new AWS.S3({
-  accessKeyId: "AKIASFB2GTKBRWTI5LGW",
-  secretAccessKey: "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",
+  accessKeyId: "",
+  secretAccessKey: "",
 });
 
 const isValidURL = (url) => {
